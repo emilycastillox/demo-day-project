@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+/********* HEADER **********/
+
+
+  header{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.724);
+  }
+  
+  header .brand{
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    font-weight: 300;
+    text-decoration: none;
+  }
+
+  .brand:hover{
+    color: grey;
+  }
+  
+  header .navigation{
+    position: relative;
+  }
+  
+  header .navigation .navigation-items a{
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-size: 1em;
+    font-weight: 300;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+  }
+  
+  header .navigation .navigation-items a:before{
+    content: '';
+    position: absolute;
+    background: rgb(0, 0, 0);
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+  }
+  
+  header .navigation .navigation-items a:hover:before{
+    width: 100%;
+  }
+
+  /********* MAIN **********/
+
+
+main{
+  height: 600px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 200px 200px;
+  margin-top: 50px;
+  justify-content: center;
+  padding-left: 350px;
+}
+
+.contact{
+  height: 150px;
+  width: 65%;
+  margin-bottom: 30px;
+  margin-left: 70px;
+  line-height: 50px;
+  text-align: center;
+  font-weight: lighter;
+}
+
+#title{
+  font-size: 30px;
+  font-weight: lighter;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid rgb(255, 0, 0);
+}
+
+
+input{
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  margin-top: 10px;
+  width: 50%;
+  margin-left: 145px;
+  font-size: 16px;
+  font-weight: 100;
+  padding-left: 5px;
+  border: 0.5px solid grey;
+  margin-top: 30px;
+  border-radius: 4px;
+}
+
+button{
+  margin-top: 20px;
+  width: 50%;
+  margin-left: 145px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 100;
+  background: rgb(255, 0, 0);
+  color: white;
+}
+
+button:hover{
+  background: rgb(126, 4, 4);
+}
+
+.place span{
+  padding-top: 10px;
+  font-size: 38px;
+}

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+/********* HEADER **********/
+
+
+  header{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+    background: rgba(255, 0, 0, 0.613);
+  }
+  
+  header .brand{
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    font-weight: 300;
+    text-decoration: none;
+  }
+
+  .brand:hover{
+    color: grey;
+  }
+  
+  header .navigation{
+    position: relative;
+  }
+  
+  header .navigation .navigation-items a{
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-size: 1em;
+    font-weight: 300;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+  }
+  
+  header .navigation .navigation-items a:before{
+    content: '';
+    position: absolute;
+    background: rgb(0, 0, 0);
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+  }
+  
+  header .navigation .navigation-items a:hover:before{
+    width: 100%;
+  }
+
+
+/********* MAIN **********/
+
+
+main{
+  height: 450px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  padding: 100px 200px;
+  margin-top: 50px;
+}
+
+.place span{
+  padding-top: 10px;
+  font-size: 38px;
+}
+
+main p{
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+main section{
+  width: 50%;
+  justify-content: center;
+  height: 450px;
+  padding-top: 30px;
+}
+
+.about button{
+  height: 40px;
+  width: 30%;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  background: #fd0000;
+}
+
+.about button a{
+  text-decoration: none;
+  color: white;
+}
+
+.about button:hover{
+  color: white;
+  background: #aa0303fe;
+}
+
+#island{
+  font-weight: 400px;
+  text-transform: uppercase;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+/*********** PHOTO BLOCK ************/
+
+
+.photo{
+  height: 540px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  
+}
+
+.photo img{
+  padding-top: 10px;
+  height: 475px;
+  width: 45%;
+  margin: 10px;
+}
+
+/************** MORE SECTIONS ***************/
+
+.more{
+ 
+  height: 380px;
+  width: 80%;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  padding: 100px 200px;
+  position: relative;
+  font-weight: 100;
+  background: rgb(238, 238, 238);
+}
+
+.more section{
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+/***** TITLE ******/
+
+.title{
+  height: 200px;
+  font-weight: 200;
+  text-align: center;
+  padding-top: 100px;
+  font-size: 50px;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+  
+  .div1 { grid-area: 1 / 1 / 2 / 6; }
+  .div2 { grid-area: 2 / 1 / 3 / 3; }
+  .div3 { grid-area: 2 / 3 / 3 / 4; }
+  .div4 { grid-area: 2 / 4 / 3 / 6; }
+
+/****** VIDEO SECTION ********/
+
+.video{
+  height: 600px;
+}
+
+
+#myVideo {
+  position: relative;
+  margin: auto;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 550px;
+  padding-left: 200px;
+  padding-top: 55px;
+ 
+}
+
