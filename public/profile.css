@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/********* HEADER **********/
+
+
+header{
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+    background: rgba(255, 0, 0, 0.724);
+  }
+  
+  header .brand{
+    color: rgb(0, 0, 0);
+    font-size: 1.5em;
+    font-weight: 300;
+    text-decoration: none;
+  }
+
+  .brand:hover{
+    color: grey;
+  }
+  
+  header .navigation{
+    position: relative;
+  }
+  
+  header .navigation .navigation-items a{
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-size: 1em;
+    font-weight: 300;
+    text-decoration: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+  }
+  
+  header .navigation .navigation-items a:before{
+    content: '';
+    position: absolute;
+    background: rgb(0, 0, 0);
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+  }
+  
+  header .navigation .navigation-items a:hover:before{
+    width: 100%;
+  }
+
+  /********* MAIN **********/
+
+  h1{
+    font-weight: 200;
+    font-size: 50px;
+    padding-top: 15px;
+  }
+  
+  .container{
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.444);
+    width: 60%;
+    margin: auto;
+    border-radius: 7px;
+    margin-top: 50px;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  input{
+    height: 40px;
+    width: 40%;
+    border: 0.5px solid grey;
+    padding-left: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  
+  button{
+    width: 20%;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 100;
+    border: none;
+    border-radius: 5px;
+    background: hsla(236,92%,68%,1);
+    color: white;
+  }
+  
+  button:hover{
+    background: hsla(316,86%,73%,1);
+  }
+  
+  .messages{
+    list-style: none;
+  }
+  
+  .profcontainer{
+    height: 800px;
+    background-color: rgba(255, 255, 255, 0.444);
+    width: 60%;
+    margin: auto;
+    border-radius: 7px;
+    margin-top: 100px;
+  }
+  
+  h2,h3,li{
+    font-weight: 200;
+  }
+  
+  .row{
+    margin-top: 30px;
+    height: 100px;
+    border: 1px solid rgb(255, 0, 0) ;
+    width: 85%;
+    margin: auto;
+    border-radius: 7px;
+    
+  }
+  
+  .page-header{
+    margin-bottom: 20px;
+  }
+  
+  .msgcenter{
+    margin-top: 30px;
+  }

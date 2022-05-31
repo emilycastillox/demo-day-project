@@ -9,7 +9,9 @@
   
 /********* HEADER **********/
 
-
+.container{
+  margin-top: 150px;
+}
   header{
     z-index: 999;
     position: fixed;
@@ -22,7 +24,7 @@
     align-items: center;
     padding: 15px 200px;
     transition: 0.5s ease;
-    background: rgba(255, 255, 255, 0.724);
+    background: rgba(255, 0, 0, 0.724);
   }
   
   header .brand{
