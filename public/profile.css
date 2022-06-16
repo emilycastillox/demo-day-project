@@ -7,6 +7,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.localInfo{
+  display: none;
+}
+
 /********* HEADER **********/
 
 
@@ -67,6 +71,11 @@ header{
 
   /********* MAIN **********/
 
+
+  .purple{
+    color: yellow;
+  }
+
   h1{
     font-weight: 200;
     font-size: 50px;
@@ -79,16 +88,20 @@ header{
     width: 60%;
     margin: auto;
     border-radius: 7px;
-    margin-top: 50px;
+    margin-top: 100px;
   }
   
   a{
     text-decoration: none;
   }
+
+  .add{
+    margin-bottom: 20px;
+  }
   
   input{
     height: 40px;
-    width: 40%;
+    width: 30%;
     border: 0.5px solid grey;
     padding-left: 5px;
     border-radius: 5px;
@@ -111,23 +124,60 @@ header{
     background: hsla(316,86%,73%,1);
   }
   
-  .messages{
+  .characters{
     list-style: none;
+  }
+
+  .addChar{
+    margin-top: 50px;
   }
   
   .profcontainer{
     height: 800px;
     background-color: rgba(255, 255, 255, 0.444);
-    width: 60%;
+    width: 75%;
     margin: auto;
     border-radius: 7px;
     margin-top: 100px;
+    text-align: center;
   }
   
-  h2,h3,li{
+  h2,h3,li,p{
     font-weight: 200;
   }
+
+  #learned{
+    margin-bottom: 30px;
+  }
+
+  #howTo{
+    margin-bottom: 50px;
+  }
   
+  ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  li{
+    background: rgb(219, 22, 22);
+    color: white;
+    border: 1px solid black;
+    width: 50%;
+    border-radius: 5px;
+    height: 180px;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  li span{
+    flex-direction: column;
+  }
+
+
   .row{
     margin-top: 30px;
     height: 100px;

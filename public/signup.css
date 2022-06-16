@@ -67,6 +67,9 @@
 
   /********* MAIN **********/
 
+  .container{
+    text-align: center;
+  }
 
 main{
   height: 600px;
@@ -97,26 +100,40 @@ main{
   border-bottom: 0.5px solid rgb(255, 0, 0);
 }
 
-
-input{
+form{
   display: flex;
+  justify-content: center;
   flex-direction: column;
-  height: 50px;
+  height: 200px;
   margin-top: 10px;
-  width: 50%;
-  margin-left: 145px;
+  width: 40%;
   font-size: 16px;
   font-weight: 100;
   padding-left: 5px;
   border: 0.5px solid grey;
   margin-top: 30px;
   border-radius: 4px;
+  margin-left: 350px;
+  margin-bottom: 50px;
+}
+
+input{
+  flex-direction: column;
+  height: 40px;
+  margin-top: 10px;
+  width: 60%;
+  font-size: 16px;
+  font-weight: 100;
+  padding-left: 5px;
+  border: 0.5px solid grey;
+  margin-top: 10px;
+  border-radius: 4px;
 }
 
 button{
   margin-top: 20px;
   width: 50%;
-  margin-left: 145px;
+  margin-left: 140px;
   height: 50px;
   font-size: 20px;
   border: none;

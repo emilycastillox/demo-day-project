@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>LianxiLib</title>
+    <title>LianxiLib | Profile</title>
     <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -28,52 +28,52 @@
         <h1> My Profile</h1>
         <a href="/logout" class="btn btn-default btn-sm">Logout</a>
     </div>
-
-    <div class="row">
-
-        <!-- LOCAL INFORMATION -->
-        <div class="col-sm-6">
-            <div class="well">
-                <h3><span class="fa fa-user"></span> Local</h3>
-
-                <% if (user.local.email) { %>
-                    <p>
-                        <strong>id</strong>: <%= user._id %><br>
-                        <strong>email</strong>: <%= user.local.email %><br>
-                        <strong>password</strong>: <%= user.local.password %>
-                    </p>
-
-                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
-                <% } else { %>
-                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
-                <% } %>
-
-            </div>
-        </div>
-        <div class="msgcenter">
-          <h3>Your Characters</h3>
-          <ul class="messages">
-          <% for(var i=0; i<messages.length; i++) {%>
-            <li class="message <%= messages[i].favorited ? 'purple' : '' %>">
-              <span><%= messages[i].name %></span>
-              <span><%= messages[i].msg %></span>
-              <!-- <span><%= messages[i].thumbUp %></span>
-              <span><i class="fa-solid fa-heart-circle-plus" aria-hidden="true"></i></span>
-              <span><i class="fa-solid fa-star" aria-hidden="true"></i></span> -->
-              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
-          <% } %>
-          </ul>
-
-          <h2>Add Characters to your Library</h2>
+    <div class="addChar">
+        <h2 class="add">Add Characters to your Library</h2>
         <% if (user.local.email) { %>
-          <form action="/messages" method="POST">
-            <input type="text" value="<%= user.local.email %>" name="name">
-            <input type="text" placeholder="Characters" name="msg">
+
+
+          <form action="/addChar" enctype="multipart/form-data" method="POST">
+            <input type="text" placeholder="Character" name="character">
+            <input type="text" placeholder="Definition" name="definition">
+            <input type="text" placeholder="Pinyin" name="pinyin">
+            <input type="file" name="file-to-upload">
             <button type="submit">Submit</button>
           </form>
+          <section class="main-controls">
+            <canvas class="visualizer" height="60px"></canvas>
+            <div id="buttons">
+              <button class="record">Record</button>
+              <button class="stop">Stop</button>
+            </div>
+          </section>
+          <section class="sound-clips">
+
+
+          </section>
         </div>
         <% } %>
-        <i class="fa-solid fa-face-smile-hearts"></i>
+
+        <div class="msgcenter">
+          <h2 id="learned">Your Learned Character Library</h2>
+          <p id="howTo">Keep track of your learned characters here. Use the checkmark to keep count of the days you have studied the character, use the star to favorite a character, and use the trashcan to delete it.</p>
+          <section>
+          <ul class="characters">
+          <% for(let i=0; i<characters.length; i++) {%>
+            <li class="character <%= characters[i].favorited ? 'purple' : '' %>">
+              <a href="/character/<%= characters[i]._id %>">
+              <span><%= characters[i].character %></span>
+              <span><%= characters[i].definition %></span>
+              <span><%= characters[i].pinyin %></span>
+              <audio controls src="<%= characters[i].audio %>"></audio>
+              <span><%= characters[i].thumbUp %></span>
+              <span><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+              <span><i class="fa-solid fa-star" aria-hidden="true"></i></span>
+              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+              </a>
+          <% } %>
+          </ul>
+        </section>
 </div>
 
 <script src="main.js"></script>
