@@ -8,43 +8,6 @@ const form = document.getElementById('newChar')
 const fileInput = document.getElementById('sound-clips')
 const canvas = document.querySelector('.visualizer');
 const mainSection = document.querySelector('.main-controls');
-let file
-
-// form.addEventListener('submit', (e) => {
-//   console.log(e.currentTarget)
-//   console.log(new FormData(e.currentTarget).entries())
-//   const formData = Object.fromEntries(new FormData(e.currentTarget).entries())
-//   formData.character
-//   console.log(formData.character)
-//   e.preventDefault()
-//   console.log({
-//     'character': formData.character,
-//     'definition': formData.definition,
-//     'pinyin': formData.pinyin
-    
-//   })
-  // const formData = new FormData()
-  // formData.append('files', file)
-
-//   fetch('characters', {
-//     method: 'post',
-//     headers: {
-// 			"Content-Type": "application/json",
-// 			"Accept": "application/json"
-// 		},
-//     body: JSON.stringify({
-//       'character': formData.character,
-//       'definition': formData.definition,
-//       'pinyin': formData.pinyin,
-//       'audio': formData.audio
-//     })
-//   })
-//   .then(data => {
-//     console.log(data)
-//     window.location.reload(true)
-//   })
-//     .catch((err) => ('Error occurred', err))
-// })
 
 Array.from(studied).forEach(function(element) {
       element.addEventListener('click', function(){
@@ -118,6 +81,81 @@ Array.from(trash).forEach(function(element) {
         })
       });
 });
+
+
+
+
+
+
+
+
+
+
+
+// Practice Characters - http://ccdb.hemiola.com/characters/radicals/85?filter=gb&fields=kDefinition,kMandarin
+
+document.querySelector('button').addEventListener('click', getNewChar)
+
+function getNewChar(){
+fetch("http://ccdb.hemiola.com/characters?filter=gb&fields=kDefinition,kMandarin,string") 
+    .then(res => res.json()) // parse response as JSON 
+    .then(data => { 
+      console.log(data) 
+      /*function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}*/
+      data.forEach(element =>{
+        data.length // max range 
+        // diplay data
+        // math.random is giving u a random index 
+        // run random character function, check to see/ conditional
+        //loop through to see if random is equal favorited 
+        let ul = document.querySelector('ul')
+        const li = document.createElement('li')
+        ul.appendChild(li)
+        let h3 = document.createElement('h3')
+        li.appendChild(h3)
+        h3.innerText = element.string
+        let p = document.createElement('p')
+        li.appendChild(p)
+        p.innerText = element.kDefinition
+        let p2 = document.createElement('p')
+        li.appendChild(p2) 
+        p2.innerText = element.kMandarin
+    })
+  })
+    .catch(err => { 
+        console.log(`error ${err}`) 
+    }); 
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

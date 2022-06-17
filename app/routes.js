@@ -20,24 +20,21 @@ module.exports = function(app, passport, db, multer, ObjectId) {
 
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
-        db.collection('character').find({postedBy: req.user._id}).toArray((err, result) => {
+        db.collection('character').find({ postedBy: req.user.local.email }).toArray((err, result) => {
           if (err) return console.log(err)
+          console.log('result ', result)
           res.render('profile.ejs', {
             user : req.user,
             characters: result
           })
         })
     });
-    //specific character post page
-    app.get('/character/:id', isLoggedIn, function(req, res) {
-      let postId = ObjectId(req.params.id)
-      db.collection('character').find({postedBy: postId}).toArray((err, result) => {
-        if (err) return console.log(err)
-        res.render('post.ejs', {
-          posts: result
-        })
-      })
-    });
+    
+    //PRACTICE PAGE ================================================
+    app.get('/practice', function(req, res) {
+      res.render('practice.ejs');
+  });
+
 
     // LOGOUT ==============================
     app.get('/logout', function(req, res) {
@@ -48,11 +45,17 @@ module.exports = function(app, passport, db, multer, ObjectId) {
 // post routes ===============================================================
 //Instead of message board - this will be where the User can keep a library of Chinese Charcters
     app.post('/addChar', isLoggedIn, upload.single('file-to-upload'), (req, res) => {
-      console.log(req.body)
-      console.log(req.file)
-      let user = req.user._id
-      db.collection('character').insertOne({character: req.body.character, definition: req.body.definition, pinyin: req.body.pinyin, thumbUp: 0, favorited:false, audio: 'audio/uploads/' + req.file.filename}, (err, result) => {
+      // console.log(req)
+      // console.log(req.body)
+      console.log('doggiedog  ', req.file.filename ) 
+      // let user = req.user._id
+      db.collection('character').insertOne({character: req.body.character, definition: req.body.definition, pinyin: req.body.pinyin, thumbUp: 0, favorited:false, audio: 'audio/uploads/' + req.file.filename, postedBy: req.user.local.email}, (err, result) => {
+        console.log('hellloo ', result.ops[0])
         if (err) return console.log(err)
+        // res.render('profile.ejs', {
+        //   characters: result.ops[0], 
+        //   user: req.user
+        // })
         console.log('saved to database')
         res.redirect('/profile')
       })
@@ -73,7 +76,7 @@ module.exports = function(app, passport, db, multer, ObjectId) {
       })
     })
     app.put('/favorites', (req, res) => {
-      console.log(req.body)
+      // console.log(req.body)
       db.collection('character')
       .findOneAndUpdate({character: req.body.character, definition: req.body.definition,pinyin: req.body.pinyin}, {
         $set: {
