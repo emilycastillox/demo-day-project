@@ -71,15 +71,12 @@ header{
 
   /********* MAIN **********/
 
-
-  .purple{
-    color: yellow;
-  }
-
   h1{
     font-weight: 200;
     font-size: 50px;
-    padding-top: 15px;
+    padding-top: 70px;
+    text-align: center;
+    margin-bottom: 50px;
   }
   
   .container{
@@ -89,25 +86,13 @@ header{
     margin: auto;
     border-radius: 7px;
     margin-top: 100px;
+    text-align: center;
   }
   
   a{
     text-decoration: none;
   }
-
-  .add{
-    margin-bottom: 20px;
-  }
   
-  input{
-    height: 40px;
-    width: 30%;
-    border: 0.5px solid grey;
-    padding-left: 5px;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-bottom: 15px;
-  }
   
   button{
     width: 20%;
@@ -118,18 +103,11 @@ header{
     border-radius: 5px;
     background: hsla(236,92%,68%,1);
     color: white;
+    margin-bottom: 50px;
   }
   
   button:hover{
     background: hsla(316,86%,73%,1);
-  }
-  
-  .characters{
-    list-style: none;
-  }
-
-  .addChar{
-    margin-top: 50px;
   }
   
   .profcontainer{
@@ -146,17 +124,13 @@ header{
     font-weight: 200;
   }
 
-  #learned{
-    margin-bottom: 30px;
+  h3{
+    font-size: 30px;
   }
 
-  #howTo{
-    margin-bottom: 50px;
-  }
-  
   ul{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
   }
@@ -165,34 +139,13 @@ header{
     background: rgb(219, 22, 22);
     color: white;
     border: 1px solid black;
-    width: 50%;
+    width: 70%;
     border-radius: 5px;
     height: 180px;
     padding: 20px;
     margin: 10px;
     display: flex;
     flex-direction: column;
-  }
-
-  li span{
-    flex-direction: column;
-  }
-
-
-  .row{
-    margin-top: 30px;
-    height: 100px;
-    border: 1px solid rgb(255, 0, 0) ;
-    width: 85%;
-    margin: auto;
-    border-radius: 7px;
-    
-  }
-  
-  .page-header{
-    margin-bottom: 20px;
-  }
-  
-  .msgcenter{
-    margin-top: 30px;
+    text-align: center;
+    margin-left: 120px;
   }

@@ -105,7 +105,7 @@ fetch("http://ccdb.hemiola.com/characters?filter=gb&fields=kDefinition,kMandarin
   return Math.floor(Math.random() * max);
 }*/
       data.forEach(element =>{
-        data.length // max range 
+       // data.length max range 
         // diplay data
         // math.random is giving u a random index 
         // run random character function, check to see/ conditional
