@@ -41,7 +41,8 @@
             <button type="submit">Submit</button>
           </form>
           <section class="main-controls">
-            <canvas class="visualizer" height="60px"></canvas>
+            <h2 class="add">Record and Download Your Pronounciation</h2>
+            <canvas class="visualizer" height="40px"></canvas>
             <div id="buttons">
               <button class="record">Record</button>
               <button class="stop">Stop</button>
@@ -62,10 +63,11 @@
             <% for(let i= 0; i<characters.length; i++) { %>
 
             <li class="character <%= characters[i].favorited ? 'purple' : '' %>">
-              <span><%= characters[i].character %></span>
+              <span id="big"><%= characters[i].character %></span>
               <span><%= characters[i].definition %></span>
               <span><%= characters[i].pinyin %></span>
               <audio controls src="<%= characters[i].audio %>"></audio>
+              <span><%= characters[i].thumbUp %></span>
               <span><i class="fa-solid fa-check" aria-hidden="true"></i></span>
               <span><i class="fa-solid fa-star" aria-hidden="true"></i></span>
               <span><i class="fa fa-trash" aria-hidden="true"></i></span>

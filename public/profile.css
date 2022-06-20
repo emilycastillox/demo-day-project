@@ -118,6 +118,7 @@ header{
     border-radius: 5px;
     background: hsla(236,92%,68%,1);
     color: white;
+    margin-top: 10px;
   }
   
   button:hover{
@@ -153,6 +154,14 @@ header{
   #howTo{
     margin-bottom: 50px;
   }
+
+  .main-controls{
+    margin-top: 20px;
+  }
+
+  .visualizer{
+    width: 60%;
+  }
   
   ul{
     display: flex;
@@ -167,7 +176,7 @@ header{
     border: 1px solid black;
     width: 50%;
     border-radius: 5px;
-    height: 180px;
+    height: 250px;
     padding: 20px;
     margin: 10px;
     display: flex;
@@ -176,8 +185,18 @@ header{
 
   li span{
     flex-direction: column;
+    line-height: 25px;
   }
 
+#big{
+  font-size: 25px;
+}
+
+  audio{
+    height: 20px;
+    width: 50%;
+    margin: auto;
+  }
 
   .row{
     margin-top: 30px;
