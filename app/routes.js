@@ -29,6 +29,19 @@ module.exports = function(app, passport, db, multer, ObjectId) {
           })
         })
     });
+
+    app.get('/profile/:character/:definition/:pinyin', isLoggedIn, function(req, res) {
+      console.log('parms', req.params)
+      db.collection('character').find({ postedBy: req.user.local.email }).toArray((err, result) => {
+        if (err) return console.log(err)
+        console.log('result ', result)
+        res.render('newCharacterProfile.ejs', {
+          user : req.user,
+          characters: result,
+          params: req.params
+        })
+      })
+  });
     
     //PRACTICE PAGE ================================================
     app.get('/practice', function(req, res) {

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/v5-font-face.min.css" integrity="sha512-wVffp1z2cYYhxt8nhif5UsMu415VRqX2CkMeWg5lYyrcpFBLfoMQ6ngVSJG8BumKBl83wf2bMRDwVmTgfoDovQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="font-awesome.min.css">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="/profile.css">
 </head>
 <body>
     <header>
@@ -33,9 +33,9 @@
         <% if (user.local.email) { %>
 
           <form action="/addChar" enctype="multipart/form-data" method="POST">
-            <input type="text" placeholder="Character" name="character">
-            <input type="text" placeholder="Definition" name="definition">
-            <input type="text" placeholder="Pinyin" name="pinyin">
+            <input type="text" placeholder="Character" name="character" value="<%= params.character %>">
+            <input type="text" placeholder="Definition" name="definition" value="<%= params.definition %>">
+            <input type="text" placeholder="Pinyin" name="pinyin" value="<%= params.pinyin %>">
             <input type="file" name="file-to-upload">
             <button type="submit">Submit</button>
           </form>
