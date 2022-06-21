@@ -149,3 +149,12 @@ header{
     text-align: center;
     margin-left: 120px;
   }
+
+
+  .hidden{
+      display:none;
+  }
+  .show{
+      display:block;
+  }
+  

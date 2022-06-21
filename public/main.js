@@ -160,32 +160,6 @@ fetch("http://ccdb.hemiola.com/characters?filter=gb&fields=kDefinition,kMandarin
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //audio
 
 let audioCtx;

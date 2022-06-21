@@ -48,6 +48,20 @@ module.exports = function(app, passport, db, multer, ObjectId) {
       res.render('practice.ejs');
   });
 
+  //Study Mode Page ==============
+  app.get('/studyMode', isLoggedIn, function(req, res) {
+    db.collection('character').find({ postedBy: req.user.local.email }).toArray((err, result) => {
+      let random = shuffleArray(result)
+      console.log('random one',random)
+      if (err) return console.log(err)
+      console.log('result ', result)
+      res.render('studyMode.ejs', {
+        user : req.user,
+        characters: random,
+      
+      })
+    })
+});
 
     // LOGOUT ==============================
     app.get('/logout', function(req, res) {
@@ -166,4 +180,12 @@ function isLoggedIn(req, res, next) {
         return next();
 
     res.redirect('/');
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+return array
 }
