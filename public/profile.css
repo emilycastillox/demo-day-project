@@ -136,7 +136,7 @@ header{
   .profcontainer{
     height: 800px;
     background-color: rgba(255, 255, 255, 0.444);
-    width: 75%;
+    width: 80%;
     margin: auto;
     border-radius: 7px;
     margin-top: 100px;
@@ -194,7 +194,7 @@ header{
 
   audio{
     height: 20px;
-    width: 50%;
+    width: 65%;
     margin: auto;
   }
 
