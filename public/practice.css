@@ -133,6 +133,7 @@ header{
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    line-height: 30px;
   }
 
   li{
@@ -141,7 +142,7 @@ header{
     box-shadow: 0 15px 20px rgba(0,0,0,0.3);
     width: 70%;
     border-radius: 7px;
-    height: 180px;
+    height: 200px;
     padding: 20px;
     margin: 10px;
     display: flex;
@@ -150,9 +151,34 @@ header{
     margin-left: 120px;
   }
 
+  #big{
+    font-size: 40px;
+  }
+
+  p{
+    font-size: larger;
+  }
+
+
+.characters{
+  background: rgb(219, 22, 22);
+    color: white;
+    box-shadow: 0 15px 20px rgba(0,0,0,0.3);
+    width: 60%;
+    border-radius: 7px;
+    height: 150px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    margin-left: 150px
+}
+
+
+
 
   .hidden{
       display:none;
+      font-size: 30px;
   }
   .show{
       display:block;

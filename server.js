@@ -7,7 +7,7 @@ const app      = express();
 const port     = process.env.PORT || 8003;
 const MongoClient = require('mongodb').MongoClient
 const mongoose = require('mongoose');
-var ObjectId = require('mongodb').ObjectId
+let ObjectId = require('mongodb').ObjectId
 const passport = require('passport');
 const flash    = require('connect-flash');
 mongoose.set('useUnifiedTopology', true)

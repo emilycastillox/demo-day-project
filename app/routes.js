@@ -1,7 +1,7 @@
 module.exports = function(app, passport, db, multer, ObjectId) {
 
 
-  var storage = multer.diskStorage({
+  let storage = multer.diskStorage({
     destination: (req, file, cb) => {
       cb(null, 'public/audio/uploads')
     },
@@ -9,7 +9,7 @@ module.exports = function(app, passport, db, multer, ObjectId) {
       cb(null, file.fieldname + '-' + Date.now())
     }
   });
-  var upload = multer({storage: storage}); 
+  let upload = multer({storage: storage}); 
 
 // normal routes ===============================================================
 
@@ -164,7 +164,7 @@ module.exports = function(app, passport, db, multer, ObjectId) {
 
     // local -----------------------------------
     app.get('/unlink/local', isLoggedIn, function(req, res) {
-        var user            = req.user;
+        let user            = req.user;
         user.local.email    = undefined;
         user.local.password = undefined;
         user.save(function(err) {

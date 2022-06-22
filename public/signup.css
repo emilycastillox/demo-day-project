@@ -83,6 +83,10 @@ main{
   padding-left: 350px;
 }
 
+h1{
+  font-weight: 100;
+}
+
 .contact{
   height: 150px;
   width: 65%;
@@ -113,7 +117,7 @@ form{
   border: 0.5px solid grey;
   margin-top: 30px;
   border-radius: 4px;
-  margin-left: 350px;
+  margin-left: 385px;
   margin-bottom: 50px;
 }
 
@@ -154,4 +158,9 @@ button:hover{
 
 .container{
   margin-top: 150px;
+}
+
+a{
+  text-decoration: none;
+  color: hsla(236,92%,68%,1);
 }
