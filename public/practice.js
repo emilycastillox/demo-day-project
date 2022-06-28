@@ -3,7 +3,7 @@
 document.querySelector('button').addEventListener('click', getNewChar)
 
 function getNewChar(){
-fetch("http://ccdb.hemiola.com/characters?filter=gb&fields=kDefinition,kMandarin,string") 
+fetch("/characterApi") 
     .then(res => res.json()) // parse response as JSON 
     .then(data => { 
       console.log(data) 

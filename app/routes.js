@@ -1,4 +1,4 @@
-module.exports = function(app, passport, db, multer, ObjectId) {
+module.exports = function(app, passport, db, multer, ObjectId, http) {
 
 
   let storage = multer.diskStorage({
@@ -47,6 +47,47 @@ module.exports = function(app, passport, db, multer, ObjectId) {
     app.get('/practice', function(req, res) {
       res.render('practice.ejs');
   });
+
+  app.get('/characterApi', function(req, res) {
+    var url = 'http://ccdb.hemiola.com/characters?filter=gb&fields=kDefinition,kMandarin,string';
+
+    http.get(url, function(response){
+        var body = '';
+    
+        response.on('data', function(chunk){
+            body += chunk;
+        });
+    
+        response.on('end', function(){
+            var data = JSON.parse(body);
+            res.send(data)
+        });
+    }).on('error', function(e){
+          console.log("Got an error: ", e);
+    });
+// const options = {
+//   hostname: 'ccdb.hemiola.com',
+//   path: '/characters?filter=gb&fields=kDefinition,kMandarin,string.com',
+//   method: 'GET',
+// };
+
+// const request = http.request(options, response => {
+//   console.log(`statusCode: ${response.statusCode}`);
+
+//   response.on('data', d => {
+//     console.log(typeof d)
+//     console.log(d)
+//     res.send(JSON.stringify(d))
+//   });
+// });
+
+// request.on('error', error => {
+//   console.error(error);
+// });
+
+// request.end();
+
+});
 
   //Study Mode Page ==============
   app.get('/studyMode', isLoggedIn, function(req, res) {

@@ -17,6 +17,7 @@ let cookieParser = require('cookie-parser');
 let bodyParser   = require('body-parser');
 let session      = require('express-session');
 let multer      = require('multer');
+const http = require('http');
 
 let configDB = require('./config/database.js');
 
@@ -26,7 +27,7 @@ let db
 mongoose.connect(configDB.url, (err, database) => {
   if (err) return console.log(err)
   db = database
-  require('./app/routes.js')(app, passport, db, multer, ObjectId);
+  require('./app/routes.js')(app, passport, db, multer, ObjectId, http);
     });
  // connect to our database
 
