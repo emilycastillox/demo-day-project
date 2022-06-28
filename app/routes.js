@@ -72,17 +72,10 @@ module.exports = function(app, passport, db, multer, ObjectId) {
 // post routes ===============================================================
 //Instead of message board - this will be where the User can keep a library of Chinese Charcters
     app.post('/addChar', isLoggedIn, upload.single('file-to-upload'), (req, res) => {
-      // console.log(req)
-      // console.log(req.body)
-      console.log('doggiedog  ', req.file.filename ) 
-      // let user = req.user._id
+      console.log('file ', req.file.filename ) 
       db.collection('character').insertOne({character: req.body.character, definition: req.body.definition, pinyin: req.body.pinyin, thumbUp: 0, favorited:false, audio: 'audio/uploads/' + req.file.filename, postedBy: req.user.local.email}, (err, result) => {
         console.log('hellloo ', result.ops[0])
         if (err) return console.log(err)
-        // res.render('profile.ejs', {
-        //   characters: result.ops[0], 
-        //   user: req.user
-        // })
         console.log('saved to database')
         res.redirect('/profile')
       })
