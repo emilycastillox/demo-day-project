@@ -2,6 +2,8 @@
 
 In college I majored in Chinese Language. I found the language fun and enjoyable to learn. However, when learning Chinese, there are hundreds of characters you may not be able to keep track of and learn in your lifetime. This application allows users to keep a “library” or dictionary of Chinese characters, their definition, and pronunciation that the user can record- for the characters they have already learned. Users will also get to study and learn new characters that will be given to them randomly upon daily login, allowing them to track their progress each day. Lianxi 练习（lee-an shee) means “to practice” in Chinese (mandarin).
 
+**Check out the Live Site Here:** https://lianxilib-fullstack.herokuapp.com/
+
 ![firs](https://user-images.githubusercontent.com/102037717/175324165-7e7460b1-4059-4a5a-a9ff-5f61297f2b21.gif)
 
 ![sec](https://user-images.githubusercontent.com/102037717/175324456-444f2cdf-9443-47ec-84ee-b890cccd9015.gif)
